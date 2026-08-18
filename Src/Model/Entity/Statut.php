@@ -3,10 +3,12 @@
 class Statut
 {
     private ?int $id;
-    private string $nomStatut;
+    private ?string $nomStatut;
 
-    public function __construct( ?int $id, string $nomStatut) {
-        
+    public function __construct(
+        ?int $id = null,
+        ?string $nomStatut = null
+    ) {
         $this->id = $id;
         $this->nomStatut = $nomStatut;
     }
@@ -16,12 +18,12 @@ class Statut
         return $this->id;
     }
 
-    public function getNomStatut(): string
+    public function getNomStatut(): ?string
     {
         return $this->nomStatut;
     }
 
-    public function setNomStatut(string $nomStatut): void
+    public function setNomStatut(?string $nomStatut): void
     {
         $this->nomStatut = $nomStatut;
     }
